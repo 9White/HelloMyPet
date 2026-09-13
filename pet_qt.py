@@ -85,6 +85,8 @@ for _i in range(1, 124):
     FRAME_FILES[f"sleep_full_{_i:03d}"] = f"model_sleep_full_{_i:03d}.png"
 for _i in range(1, 124):
     FRAME_FILES[f"stretch_full_{_i:03d}"] = f"model_stretch_full_{_i:03d}.png"
+for _i in range(1, 100):
+    FRAME_FILES[f"side_lie_full_{_i:03d}"] = f"model_side_full_{_i:03d}.png"
 
 SEQUENCES = {
     "walk": {
@@ -110,6 +112,12 @@ SEQUENCES = {
         "hold_last": 10000,
         "reverse_on_exit": True,
     },
+    "side_lie": {
+        "frames": [f"side_lie_full_{_i:03d}" for _i in range(1, 100)],
+        "loop": False, "frame_ms": 42, "total_ms": 0,
+        "hold_last": 10000,
+        "reverse_on_exit": True,
+    },
 }
 
 ACTIONS = [
@@ -118,6 +126,7 @@ ACTIONS = [
     ("look",     0, 16),
     ("walk",     0, 14),
     ("jump",     0, 12),
+    ("side_lie", 0, 8),
     ("lie",    5000, 11),
     ("sleep_curl", 9000, 10),
 ]
@@ -556,6 +565,7 @@ class PetWindow(QWidget):
         menu.addAction("坐着", self._start_sit)
         menu.addAction("散步", lambda: self._start_action("walk", 0))
         menu.addAction("伸懒腰", lambda: self._start_action("stretch", 0))
+        menu.addAction("侧躺", lambda: self._start_action("side_lie", 30000))
         menu.addAction("跳一下", lambda: self._start_action("jump", 0))
         menu.addAction("睡觉", lambda: self._start_action(
             "sleep_curl", random.randint(30 * 60 * 1000, 120 * 60 * 1000)))

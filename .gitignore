@@ -21,6 +21,7 @@ issue_*.mp4
 preview_*.png
 *.json
 stretch_urls.txt
+side_urls.txt
 
 # 早期素材原图（主形象与动画帧在 assets/frames/ 下）
 cat_raw.jpg
