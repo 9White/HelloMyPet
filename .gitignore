@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+
+# 中间产物与备份（运行不需要）
+assets/frames_backup_edge/
+assets/frames_bak_720/
+assets/frames_bak_675x900/
+assets/model/
+assets/preview/
+assets/tmp/
+assets/tmp2/
+assets/video_frames/
+
+# 诊断/预览/临时文件
+*.mp4
+*.wav
+issue_*.jpg
+issue_*.png
+issue_*.mp4
+preview_*.png
+*.json
+stretch_urls.txt
+
+# 早期素材原图（主形象与动画帧在 assets/frames/ 下）
+cat_raw.jpg
+cat_cutout.png
+doze_front.jpg
+doze_front_cut.png
+doze_new.jpg
+doze_new_cut.png
+main_new.jpg
+main_new_cut.png
+model_doze_cut.png
+model_doze_new.jpg
